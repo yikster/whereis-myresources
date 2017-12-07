@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: api.controller.AWSClientTest
--------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 166.504 sec - in api.controller.AWSClientTest
