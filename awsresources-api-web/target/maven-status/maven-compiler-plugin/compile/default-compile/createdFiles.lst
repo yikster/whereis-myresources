@@ -1,0 +1,5 @@
+com/yikster/aws/resources/api/config/SwaggerConfig.class
+com/yikster/aws/resources/api/controller/ResourceCategoryController.class
+com/yikster/aws/resources/api/config/WebConfiguration.class
+com/yikster/aws/resources/api/Application.class
+com/yikster/aws/resources/api/controller/ResourceController.class
