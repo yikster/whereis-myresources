@@ -42,7 +42,7 @@ public class ResourceRepositoryTest {
     public void getOneResource() throws Exception {
         assertNotNull(resourceRepository.findAll());
         resourceRepository.findAll().forEach(resource->{
-            Resource one = resourceRepository.findOne(resource.getId());
+            Resource one = resourceRepository.findById(resource.getId()).get();
             logger.debug(one.toString());
             System.out.println(one.toString());
 
@@ -69,18 +69,18 @@ public class ResourceRepositoryTest {
 
     @Test
     public void updateResource() throws Exception {
-        Resource one = resourceRepository.findOne(1L);
+        Resource one = resourceRepository.findById(1L).get();
         assertNotNull(one);
         one.setName(one.getName() + "updated");
         resourceRepository.save(one);
-        Resource updated = resourceRepository.findOne(1L);
+        Resource updated = resourceRepository.findById(1L).get();
         assertEquals(one.getName(), updated.getName());
     }
 
     @Test
     public void deleteResource() throws Exception {
-        resourceRepository.delete(1L);
-        assertNull(resourceRepository.findOne(1L));
+        resourceRepository.deleteById(1L);
+        assertFalse(resourceRepository.findById(1L).isPresent());
     }
 
     @Test

@@ -45,7 +45,7 @@ ResourceControllerTest extends BaseTest {
         resourceCategoryRepository.save(elbCategory);
         resourceRepository.save(new Resource("Labrador chocolate", 2L, elbCategory));
         resourceRepository.save(new Resource("Golden retriever", 3L, elbCategory));
-        resource = resourceRepository.findOne(3L);
+        resource = resourceRepository.findById(3L).get();
     }
 
     @Test
@@ -84,7 +84,7 @@ ResourceControllerTest extends BaseTest {
     }
 
     private void test3UpdateResource() throws Exception {
-        Resource resource = resourceRepository.findOne(1L);
+        Resource resource = resourceRepository.findById(1L).get();
         Resource resourceUpdate = new Resource(resource.getName() + "updated", resource.getId(), resource.getResourceCategory());
         resourceUpdate.setId(resource.getId());
 

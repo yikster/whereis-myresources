@@ -39,7 +39,7 @@ public class ResourceController {
     @CrossOrigin
     @RequestMapping(method = RequestMethod.PUT)
     public ResponseEntity<?> update(@RequestBody Resource resource) {
-        if (resourceRepository.findOne(resource.getId()) != null) {
+        if (resourceRepository.findById(resource.getId()) != null) {
             return saveResource(resource);
         } else {
             return ResponseEntity.noContent().build();
@@ -55,13 +55,13 @@ public class ResourceController {
     @CrossOrigin
     @RequestMapping(value = "/{resourceId}", method = RequestMethod.GET)
     public ResponseEntity<Resource> getById(@PathVariable Long resourceId) {
-        return  new ResponseEntity<>(resourceRepository.findOne(resourceId), HttpStatus.OK);
+        return  new ResponseEntity<Resource>(resourceRepository.findById(resourceId).get(), HttpStatus.OK);
     }
 
     @CrossOrigin
     @RequestMapping(value = "/{resourceId}", method = RequestMethod.DELETE)
     public ResponseEntity delete(@PathVariable Long resourceId) {
-        resourceRepository.delete(resourceId);
+        resourceRepository.deleteById(resourceId);
         return ResponseEntity.ok().build();
     }
 
