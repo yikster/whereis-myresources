@@ -25,7 +25,7 @@
         <h2.version>1.4.196</h2.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <spring.boot>1.5.1.RELEASE</spring.boot>
+        <spring.boot>2.0.4.RELEASE</spring.boot>
         <swagger.version>2.4.0</swagger.version>
     </properties>
 

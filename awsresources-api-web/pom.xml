@@ -12,8 +12,6 @@
     <artifactId>awsresources-api-web</artifactId>
 
     <properties>
-        <!-- The main class to start by executing java -jar -->
-        <start-class>com.yikster.aws.resources.api.Application</start-class>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
